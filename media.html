@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<script src="jquery.min.js"></script>
+		<script>
+			function playAudio(){console.log("playing");
+				document.getElementById("myaudio1").play();
+			}
+
+			function pauseAudio(){
+				document.getElementById("myaudio1").pause();
+			}
+
+			$().ready(function(){
+				$("#playButton").on("click",playAudio);
+				$("#pauseButton").on("click",pauseAudio);
+			});
+		</script>
+	</head>
+	<body>
+		<audio src="Kalimba.mp3" controls id="myaudio1"></audio>
+		<input type="button" value="Play" id="playButton">		
+		<input type="button" value="Pause" id="pauseButton">
+	</body>
+</htm>

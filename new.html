@@ -1,0 +1,30 @@
+<html>
+<head>
+
+	<script src="jquery.min.js"></script>
+	<script>
+     var xhr;
+     function fetch(){
+     	xhr=new XMLHttpRequest;
+     	var country1=document.getElementById("input1").value;
+     	console.log(country1);
+     	var url="world.jsp?country="+country1;
+     	console.log(country);
+     	xhr.open("POST",url);
+        xhr.onreadystatechange=callme;
+     	xhr.send();
+
+     }
+     function callme(){
+     if(xhr.readyState==4){
+     	var response=xhr.responseText;
+     }
+     }
+	</script>
+	<title></title>
+</head>
+<body>
+<input type="text" placeholder="country" id="input1"><br>
+<input type="button" value="fetch" id="button1" onclick="fetch()"> 
+</body>
+</html>
